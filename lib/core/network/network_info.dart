@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dimas_izzulhaq_zain_s_application4/main.dart';
+import 'package:vioscake_admin/main.dart';
 
 // For checking internet connectivity
 abstract class NetworkInfoI {

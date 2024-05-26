@@ -1,5 +1,8 @@
+// ignore_for_file: duplicate_ignore
+
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
+import '../../theme/custom_button_style.dart';
 import '../../widgets/custom_elevated_button.dart';
 import '../../widgets/custom_outlined_button.dart';
 import '../../widgets/custom_text_form_field.dart'; // ignore_for_file: must_be_immutable
@@ -21,6 +24,7 @@ class SignInOneScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: appTheme.orange100,
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           padding: EdgeInsets.only(
@@ -38,7 +42,7 @@ class SignInOneScreen extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 64.v),
-                      decoration: AppDecoration.fillOnPrimary.copyWith(
+                      decoration: AppDecoration.fillWhiteA.copyWith(
                         borderRadius: BorderRadiusStyle.customBorderTL30,
                       ),
                       child: Column(
@@ -48,7 +52,7 @@ class SignInOneScreen extends StatelessWidget {
                           SizedBox(height: 38.v),
                           Text(
                             "Sign to your account",
-                            style: CustomTextStyles.bodyMediumDeeporangeA100,
+                            style: CustomTextStyles.bodyMediumPrimary,
                           ),
                           SizedBox(height: 28.v),
                           _buildEmailField(context),
@@ -65,7 +69,7 @@ class SignInOneScreen extends StatelessWidget {
                                 padding: EdgeInsets.only(right: 41.h),
                                 child: Text(
                                   "Forgot Password?",
-                                  style: theme.textTheme.labelMedium!.copyWith(
+                                  style: CustomTextStyles.labelMediumGray70001.copyWith(
                                     decoration: TextDecoration.underline,
                                   ),
                                 ),
@@ -84,15 +88,14 @@ class SignInOneScreen extends StatelessWidget {
                                 children: [
                                   TextSpan(
                                     text: "Dont’t have an account?",
-                                    style:
-                                        CustomTextStyles.labelLargeBlack900_1,
+                                    style: theme.textTheme.labelLarge,
                                   ),
                                   TextSpan(
                                     text: " ",
                                   ),
                                   TextSpan(
                                     text: "Sign up",
-                                    style: theme.textTheme.labelLarge!.copyWith(
+                                    style: CustomTextStyles.labelLargeGray70001_1.copyWith(
                                       decoration: TextDecoration.underline,
                                     ),
                                   )
@@ -158,6 +161,7 @@ class SignInOneScreen extends StatelessWidget {
       child: CustomTextFormField(
         controller: emailFieldController,
         hintText: "Email",
+        hintStyle: CustomTextStyles.bodyMediumBluegray400,
         textInputType: TextInputType.emailAddress,
       ),
     );
@@ -173,6 +177,7 @@ class SignInOneScreen extends StatelessWidget {
       child: CustomTextFormField(
         controller: passwordFieldController,
         hintText: "Password",
+        hintStyle: CustomTextStyles.bodyMediumBluegray400,
         textInputAction: TextInputAction.done,
         textInputType: TextInputType.visiblePassword,
         obscureText: true,
@@ -183,8 +188,14 @@ class SignInOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildSignInButton(BuildContext context) {
     return CustomElevatedButton(
+      height: 52.v,
       width: 251.h,
       text: "Sign in",
+      buttonStyle: CustomButtonStyles.fillGray,
+      buttonTextStyle: theme.textTheme.titleLarge!,
+      onPressed: () {
+        onTapSignInButton(context);
+      },
     );
   }
 
@@ -200,7 +211,7 @@ class SignInOneScreen extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               "Or sign in with",
-              style: CustomTextStyles.bodySmall11,
+              style: CustomTextStyles.bodySmallOnPrimaryContainer,
             ),
           ),
           CustomImageView(
@@ -250,6 +261,11 @@ class SignInOneScreen extends StatelessWidget {
   /// Navigates to the forgotPasswordScreen when the action is triggered.
   onTapTxtForgotpassword(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.forgotPasswordScreen);
+  }
+
+/// Navigates to the homeContainerScreen when the action is triggered.
+  onTapSignInButton(BuildContext context) {
+    // Navigator.pushNamed(context, AppRoutes.signInOneScreen);
   }
 
   /// Navigates to the signUpScreen when the action is triggered.

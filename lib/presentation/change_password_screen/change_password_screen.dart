@@ -1,3 +1,5 @@
+// ignore_for_file: duplicate_ignore
+
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_elevated_button.dart';
@@ -20,7 +22,7 @@ class ChangePasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: theme.colorScheme.onPrimary,
+        // backgroundColor: theme.colorScheme.onPrimary,
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           padding: EdgeInsets.only(
@@ -53,7 +55,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   SizedBox(height: 14.v),
                   Text(
                     "Enter your new password",
-                    style: CustomTextStyles.bodySmallBluegray400,
+                    style: CustomTextStyles.bodySmallRegular,
                   ),
                   SizedBox(height: 84.v),
                   Padding(

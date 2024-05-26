@@ -1,5 +1,8 @@
+// ignore_for_file: duplicate_ignore
+
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
+import '../../theme/custom_button_style.dart';
 import '../../widgets/custom_elevated_button.dart';
 import '../../widgets/custom_outlined_button.dart';
 import '../../widgets/custom_text_form_field.dart'; // ignore_for_file: must_be_immutable
@@ -24,6 +27,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: appTheme.orange100,
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           padding: EdgeInsets.only(
@@ -41,7 +45,7 @@ class SignUpScreen extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 64.v),
-                      decoration: AppDecoration.fillOnPrimary.copyWith(
+                      decoration: AppDecoration.fillWhiteA.copyWith(
                         borderRadius: BorderRadiusStyle.customBorderTL30,
                       ),
                       child: Column(
@@ -51,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                           SizedBox(height: 39.v),
                           Text(
                             "Create your account",
-                            style: CustomTextStyles.bodyMediumDeeporangeA100,
+                            style: CustomTextStyles.bodyMediumPrimary,
                           ),
                           SizedBox(height: 27.v),
                           _buildEmailField(context),
@@ -71,15 +75,14 @@ class SignUpScreen extends StatelessWidget {
                                 children: [
                                   TextSpan(
                                     text: "Already have an account?",
-                                    style:
-                                        CustomTextStyles.labelLargeBlack900_1,
+                                    style: theme.textTheme.labelLarge,
                                   ),
                                   TextSpan(
                                     text: " ",
                                   ),
                                   TextSpan(
                                     text: "Sign in",
-                                    style: theme.textTheme.labelLarge!.copyWith(
+                                    style: CustomTextStyles.labelLargeGray70001_1.copyWith(
                                       decoration: TextDecoration.underline,
                                     ),
                                   )
@@ -127,6 +130,7 @@ class SignUpScreen extends StatelessWidget {
       child: CustomTextFormField(
         controller: emailFieldController,
         hintText: "Email",
+        hintStyle: CustomTextStyles.bodyMediumBluegray400,
         textInputType: TextInputType.emailAddress,
       ),
     );
@@ -142,6 +146,7 @@ class SignUpScreen extends StatelessWidget {
       child: CustomTextFormField(
         controller: passwordFieldController,
         hintText: "Password",
+        hintStyle: CustomTextStyles.bodyMediumBluegray400,
         textInputType: TextInputType.visiblePassword,
         obscureText: true,
       ),
@@ -158,6 +163,7 @@ class SignUpScreen extends StatelessWidget {
       child: CustomTextFormField(
         controller: confirmPasswordFieldController,
         hintText: "Confirm Password",
+        hintStyle: CustomTextStyles.bodyMediumBluegray400,
         textInputAction: TextInputAction.done,
         textInputType: TextInputType.visiblePassword,
         obscureText: true,
@@ -170,6 +176,8 @@ class SignUpScreen extends StatelessWidget {
     return CustomElevatedButton(
       width: 251.h,
       text: "Sign up",
+      buttonStyle: CustomButtonStyles.fillGray,
+      buttonTextStyle: theme.textTheme.titleLarge!,
       onPressed: () {
         onTapSignUpButton(context);
       },
@@ -188,7 +196,7 @@ class SignUpScreen extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               "Or sign up with",
-              style: CustomTextStyles.bodySmall11,
+              style: CustomTextStyles.bodySmallOnPrimaryContainer,
             ),
           ),
           CustomImageView(

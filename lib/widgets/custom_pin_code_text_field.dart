@@ -1,3 +1,5 @@
+// ignore_for_file: duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -54,9 +56,9 @@ class CustomPinCodeTextField extends StatelessWidget {
           fieldWidth: 62.h,
           shape: PinCodeFieldShape.box,
           borderRadius: BorderRadius.circular(15.h),
-          inactiveColor: appTheme.deepOrangeA100,
-          activeColor: appTheme.deepOrangeA100,
-          selectedColor: appTheme.deepOrangeA100,
+          inactiveColor: theme.colorScheme.primary,
+          activeColor: theme.colorScheme.primary,
+          selectedColor: theme.colorScheme.primary,
         ),
         onChanged: (value) => onChanged(value),
         validator: validator,

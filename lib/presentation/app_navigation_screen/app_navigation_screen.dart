@@ -11,7 +11,7 @@ class AppNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: theme.colorScheme.onPrimary,
+        // backgroundColor: theme.colorScheme.onPrimary,
         body: SizedBox(
           width: 375.h,
           child: Column(
@@ -20,9 +20,15 @@ class AppNavigationScreen extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
-                    decoration: AppDecoration.fillOnPrimary,
+                    decoration: AppDecoration.fillWhiteA,
                     child: Column(
                       children: [
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "splash",
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.splashScreen),
+                        ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "sign in",
@@ -68,7 +74,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAppNavigation(BuildContext context) {
     return Container(
-      decoration: AppDecoration.fillOnPrimary,
+      decoration: AppDecoration.fillWhiteA,
       child: Column(
         children: [
           SizedBox(height: 10.v),
@@ -80,7 +86,7 @@ class AppNavigationScreen extends StatelessWidget {
                 "App Navigation",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: appTheme.black900,
+                  color: theme.colorScheme.onPrimaryContainer.withOpacity(1),
                   fontSize: 20.fSize,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
@@ -109,7 +115,7 @@ class AppNavigationScreen extends StatelessWidget {
           Divider(
             height: 1.v,
             thickness: 1.v,
-            color: appTheme.black900,
+            color: theme.colorScheme.onPrimaryContainer.withOpacity(1),
           )
         ],
       ),
@@ -127,7 +133,7 @@ class AppNavigationScreen extends StatelessWidget {
         onTapScreenTitle?.call();
       },
       child: Container(
-        decoration: AppDecoration.fillOnPrimary,
+        decoration: AppDecoration.fillWhiteA,
         child: Column(
           children: [
             SizedBox(height: 10.v),
@@ -139,7 +145,7 @@ class AppNavigationScreen extends StatelessWidget {
                   screenTitle,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: appTheme.black900,
+                    color: theme.colorScheme.onPrimaryContainer.withOpacity(1),
                     fontSize: 20.fSize,
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w400,

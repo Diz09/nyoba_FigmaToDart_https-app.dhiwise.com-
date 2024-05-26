@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, duplicate_ignore
+
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import '../app_export.dart'; // These are the Viewport values of your Figma Design.

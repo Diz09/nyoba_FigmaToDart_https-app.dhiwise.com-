@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
+import '../../theme/custom_button_style.dart';
 import '../../widgets/custom_elevated_button.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -12,6 +13,7 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: appTheme.orange100,
         body: SizedBox(
           width: double.maxFinite,
           child: Column(
@@ -34,6 +36,8 @@ class SignInScreen extends StatelessWidget {
               CustomElevatedButton(
                 width: 251.h,
                 text: "Sign up",
+                buttonStyle: CustomButtonStyles.fillGray,
+                buttonTextStyle: theme.textTheme.titleLarge!,
                 onPressed: () {
                   onTapSignup(context);
                 },
@@ -48,14 +52,14 @@ class SignInScreen extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: "Already have an account?",
-                        style: CustomTextStyles.labelLargeBlack900_1,
+                        style: theme.textTheme.labelLarge,
                       ),
                       TextSpan(
                         text: " ",
                       ),
                       TextSpan(
                         text: "Sign in",
-                        style: theme.textTheme.labelLarge!.copyWith(
+                        style: CustomTextStyles.labelLargeGray70001_1.copyWith(
                           decoration: TextDecoration.underline,
                         ),
                       )

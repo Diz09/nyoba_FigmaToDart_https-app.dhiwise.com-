@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import '../app_export.dart';
