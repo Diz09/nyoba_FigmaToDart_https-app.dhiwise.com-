@@ -58,7 +58,67 @@ class AppNavigationScreen extends StatelessWidget {
                           screenTitle: "change password",
                           onTapScreenTitle: () => onTapScreenTitle(
                               context, AppRoutes.changePasswordScreen),
-                        )
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "container",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.containerScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "chat",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.chatAdmin),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "menu selected",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.menuSelectedPage),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "selesaikan pesanan",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.selesaikanPesanan),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "bayar",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.bayarScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "metode pembayaran",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.metodeBayarScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "pembayaran",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.pembayaran),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "menu select",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.menuSelectPage),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "detail pesanan",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.daftarTransaksiScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "dafter transaksi",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.daftarTransaksiScreen),
+                        ),
                       ],
                     ),
                   ),

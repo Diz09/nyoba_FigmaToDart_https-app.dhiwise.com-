@@ -265,7 +265,7 @@ class SignInOneScreen extends StatelessWidget {
 
 /// Navigates to the homeContainerScreen when the action is triggered.
   onTapSignInButton(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.ContainerScreen);
+    Navigator.pushNamed(context, AppRoutes.containerScreen);
   }
 
   /// Navigates to the signUpScreen when the action is triggered.

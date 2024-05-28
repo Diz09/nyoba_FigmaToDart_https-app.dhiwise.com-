@@ -14,6 +14,7 @@ class ImageConstant {
   static String imgFacebook = '$imagePath/img_facebook.svg';
 
   static String imgImage1147x150 = '$imagePath/img_image_1_147x150.png';
+  static String imgImage150x50 = '$imagePath/img_image_1_50x50.png';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
 
@@ -27,6 +28,7 @@ class ImageConstant {
   static String naviMenu = '$imagePath/iconBottomBar/imenu.svg';
   static String naviCart = '$imagePath/iconBottomBar/icart.svg';
   static String naviSetting = '$imagePath/iconBottomBar/isetting.svg';
+
   // lain-lain
 
   static String imgMenu = 'assets/images/img_menu.svg';
@@ -42,5 +44,8 @@ class ImageConstant {
 
   static String imgSearch = '$imagePath/search.svg';
 
+  static String imgChatNotification = '$imagePath/chat_notification.svg';
+
+  static String imgSendChat = '$imagePath/sendChat.svg';
 
 }
